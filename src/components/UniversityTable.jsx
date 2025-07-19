@@ -5,16 +5,17 @@ const UniversityTable = () => {
   const [universities, setUniversities] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://universities.hipolabs.com/search?country=United+States")
-      .then((res) => {
-        const sortedData = res.data.sort((a, b) =>
-          a.name.localeCompare(b.name)
-        );
-        setUniversities(sortedData);
-      })
-      .catch((err) => console.error("Error fetching data", err));
-  }, []);
+  axios
+    .get("https://universities.hipolabs.com/search?country=United+States")
+    .then((res) => {
+      const sortedData = res.data.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setUniversities(sortedData);
+    })
+    .catch((err) => console.error("Error fetching data", err));
+}, []);
+
 
   return (
     <div style={{ padding: "30px", backgroundColor: "#121212", color: "#fff", minHeight: "100vh" }}>
