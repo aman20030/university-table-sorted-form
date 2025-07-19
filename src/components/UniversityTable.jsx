@@ -6,7 +6,7 @@ const UniversityTable = () => {
 
   useEffect(() => {
   axios
-    .get("https://universities.hipolabs.com/search?country=United+States")
+    .get("http://universities.hipolabs.com/search?country=United+States")
     .then((res) => {
       const sortedData = res.data.sort((a, b) =>
         a.name.localeCompare(b.name)
